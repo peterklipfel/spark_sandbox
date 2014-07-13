@@ -9,6 +9,11 @@ object Sandbox {
 
 
   def main(args: Array[String]) = {
-    println("spark!")
+    val inputRDD = sc.textFile("/var/log/syslog")
+    val infoRDD = inputRDD.filter(line => line.contains("info"))
+    println("number of lines")
+    println(infoRDD.count())
+    println("first line")
+    println(infoRDD.first())
   }
 }
