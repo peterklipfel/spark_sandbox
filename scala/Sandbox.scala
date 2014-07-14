@@ -13,7 +13,7 @@ object Sandbox {
     val infoRDD = inputRDD.filter(line => line.contains("info"))
     println("number of lines")
     println(infoRDD.count())
-    println("first line")
-    println(infoRDD.first())
+    println("first ten lines")
+    infoRDD.take(10).foreach(println)
   }
 }

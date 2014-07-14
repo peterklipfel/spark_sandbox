@@ -9,5 +9,6 @@ infoRDD = inputRDD.filter(lambda line: "info" in line)
 
 print "number of lines"
 print infoRDD.count()
-print "first line"
-print infoRDD.first()
+print "first 10 lines"
+for line in infoRDD.take(10):
+  print line
